@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -6,51 +7,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Хавал & Юлія | Весілля 28.08.2026</title>
+<title>Хавал & Юлія | Wedding 28.08.2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
 <style>
 
+
+:root{
+
+--gold:#b89a5a;
+--cream:#faf7f0;
+--dark:#252525;
+--white:#ffffff;
+
+}
+
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 }
 
 
 html{
+
 scroll-behavior:smooth;
+
 }
 
 
 body{
 
+background:var(--cream);
+
+color:var(--dark);
+
 font-family:'Montserrat',sans-serif;
 
-background:#faf6ef;
-
-color:#333;
+font-weight:300;
 
 }
+
 
 
 h1,h2,h3{
 
 font-family:'Cormorant Garamond',serif;
 
+font-weight:500;
+
+letter-spacing:1px;
+
 }
+
 
 
 .hero{
 
+
 height:100vh;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+color:white;
+
 
 background:
 
 linear-gradient(
-rgba(0,0,0,.45),
+rgba(0,0,0,.35),
 rgba(0,0,0,.55)
 ),
 
@@ -61,68 +102,23 @@ background-size:cover;
 
 background-position:center;
 
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-color:white;
-
-position:relative;
 
 }
 
 
 
-.hero:after{
+
+.hero:before{
 
 content:"";
 
 position:absolute;
 
-bottom:0;
+inset:25px;
 
-width:100%;
+border:1px solid rgba(255,255,255,.4);
 
-height:120px;
-
-background:linear-gradient(
-transparent,
-#faf6ef
-);
-
-}
-
-
-
-nav{
-
-position:absolute;
-
-top:30px;
-
-left:40px;
-
-right:40px;
-
-display:flex;
-
-justify-content:space-between;
-
-z-index:2;
-
-}
-
-
-
-.logo{
-
-font-size:42px;
-
-font-family:'Cormorant Garamond';
+pointer-events:none;
 
 }
 
@@ -130,9 +126,25 @@ font-family:'Cormorant Garamond';
 
 .hero-content{
 
+position:relative;
+
 z-index:2;
 
-animation:fade 2s;
+animation:fadeUp 2s ease;
+
+}
+
+
+
+.monogram{
+
+font-family:'Cormorant Garamond';
+
+font-size:70px;
+
+letter-spacing:8px;
+
+margin-bottom:20px;
 
 }
 
@@ -140,18 +152,25 @@ animation:fade 2s;
 
 .hero h1{
 
-font-size:90px;
+font-size:100px;
 
-letter-spacing:5px;
+font-weight:400;
+
+line-height:1;
 
 }
 
 
-.hero p{
 
-font-size:22px;
+.hero .subtitle{
 
-margin:15px;
+font-size:20px;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+margin:30px 0;
 
 }
 
@@ -159,7 +178,7 @@ margin:15px;
 
 .date{
 
-font-size:35px!important;
+font-size:40px;
 
 font-family:'Cormorant Garamond';
 
@@ -167,23 +186,41 @@ font-family:'Cormorant Garamond';
 
 
 
+.gold-line{
+
+width:120px;
+
+height:1px;
+
+background:var(--gold);
+
+margin:30px auto;
+
+}
+
+
+
 .button{
+
 
 display:inline-block;
 
-margin-top:30px;
+padding:16px 45px;
 
-padding:15px 40px;
-
-border-radius:50px;
-
-background:#b9975b;
+border:1px solid white;
 
 color:white;
 
 text-decoration:none;
 
-transition:.3s;
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+font-size:13px;
+
+transition:.4s;
+
 
 }
 
@@ -191,57 +228,60 @@ transition:.3s;
 
 .button:hover{
 
-background:#8b6d37;
+background:white;
+
+color:#222;
 
 }
 
 
 
-#countdown{
+
+nav{
+
+position:absolute;
+
+top:40px;
+
+left:50px;
+
+right:50px;
+
+z-index:5;
 
 display:flex;
 
-justify-content:center;
-
-gap:15px;
-
-margin-top:40px;
+justify-content:space-between;
 
 }
 
 
 
-.time{
+.logo{
 
-background:rgba(255,255,255,.15);
+font-family:'Cormorant Garamond';
 
-border:1px solid rgba(255,255,255,.4);
+font-size:35px;
 
-padding:20px;
-
-border-radius:15px;
-
-min-width:90px;
+letter-spacing:4px;
 
 }
 
 
 
-.time span{
+.language button{
 
-font-size:40px;
+background:none;
 
-font-weight:bold;
+border:1px solid white;
 
-display:block;
+color:white;
 
-}
+padding:8px 14px;
 
+margin-left:5px;
 
-
-.time small{
-
-font-size:12px;
+cursor:pointer;
 
 }
 
@@ -251,31 +291,115 @@ font-size:12px;
 
 .section{
 
-padding:90px 10%;
+
+padding:110px 12%;
 
 text-align:center;
 
-}
-
-
-
-.section h2{
-
-font-size:60px;
-
-margin-bottom:35px;
-
-color:#8b6d37;
 
 }
 
 
 
-.section p{
+.section-title{
 
-font-size:18px;
+font-size:65px;
 
-line-height:1.9;
+margin-bottom:40px;
+
+}
+
+
+
+.gold{
+
+color:var(--gold);
+
+}
+
+
+
+
+.intro{
+
+max-width:800px;
+
+margin:auto;
+
+font-size:19px;
+
+line-height:2;
+
+}
+
+
+
+
+.divider{
+
+font-size:35px;
+
+color:var(--gold);
+
+margin-bottom:30px;
+
+}
+
+
+
+
+.countdown{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:50px;
+
+}
+
+
+
+.counter{
+
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.3);
+
+padding:25px;
+
+min-width:100px;
+
+
+}
+
+
+
+.counter span{
+
+font-family:'Cormorant Garamond';
+
+font-size:50px;
+
+display:block;
+
+}
+
+
+
+.counter small{
+
+text-transform:uppercase;
+
+font-size:11px;
+
+letter-spacing:2px;
 
 }
 
@@ -289,115 +413,18 @@ background:white;
 
 
 
-.cards{
 
-display:flex;
+@keyframes fadeUp{
 
-justify-content:center;
-
-gap:30px;
-
-flex-wrap:wrap;
-
-margin-top:40px;
-
-}
-
-
-
-.card{
-
-background:white;
-
-width:260px;
-
-padding:35px;
-
-border-radius:20px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-
-}
-
-
-
-.card h3{
-
-font-size:45px;
-
-color:#b9975b;
-
-}
-
-
-
-.ornament{
-
-font-size:40px;
-
-color:#b9975b;
-
-margin-bottom:20px;
-
-}
-
-
-
-.location{
-
-background:#f1e6d2;
-
-}
-
-
-
-.gallery{
-
-background:white;
-
-}
-
-
-
-.photos{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-
-
-.photos img{
-
-width:300px;
-
-height:350px;
-
-object-fit:cover;
-
-border-radius:20px;
-
-}
-
-
-
-
-
-@keyframes fade{
 
 from{
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(50px);
 
 }
+
 
 to{
 
@@ -406,6 +433,7 @@ opacity:1;
 transform:translateY(0);
 
 }
+
 
 }
 
@@ -416,39 +444,24 @@ transform:translateY(0);
 
 .hero h1{
 
-font-size:55px;
+font-size:60px;
 
 }
 
 
-.section h2{
+.monogram{
 
-font-size:40px;
-
-}
-
-
-#countdown{
-
-gap:5px;
+font-size:45px;
 
 }
 
 
-.time{
+.section-title{
 
-min-width:70px;
-
-padding:12px;
+font-size:45px;
 
 }
 
-
-.time span{
-
-font-size:25px;
-
-}
 
 
 nav{
@@ -459,14 +472,39 @@ right:20px;
 
 }
 
+
+.countdown{
+
+gap:8px;
+
 }
 
+
+
+.counter{
+
+min-width:70px;
+
+padding:15px;
+
+}
+
+
+.counter span{
+
+font-size:30px;
+
+}
+
+
+}
 
 
 </style>
 
 
 </head>
+
 
 
 <body>
@@ -479,7 +517,16 @@ right:20px;
 <nav>
 
 <div class="logo">
-Х & Ю
+
+H & Y
+
+</div>
+
+
+<div class="language">
+
+<button>UA</button>
+
 </div>
 
 
@@ -490,112 +537,162 @@ right:20px;
 <div class="hero-content">
 
 
-<div class="ornament">
-❦
+<div class="monogram">
+
+H & Y
+
 </div>
+
 
 
 <h1>
-Хавал & Юлія
+
+Хавал<br>
+&
+<br>
+Юлія
+
 </h1>
 
 
+<div class="gold-line"></div>
+
+
+<p class="subtitle">
+
+Запрошуємо Вас на наше весілля
+
+</p>
+
+
 <p class="date">
-28 серпня 2026
-</p>
 
+28 Серпня 2026
 
-<p>
-Запрошуємо Вас розділити
-<br>
-з нами найщасливіший день
-<br>
-нашого життя
 </p>
 
 
 
-<div id="countdown">
+<div class="countdown">
 
 
-<div class="time">
-<span id="days">0</span>
+<div class="counter">
+
+<span id="days">
+0
+</span>
+
+<small>
 Днів
+</small>
+
 </div>
 
 
-<div class="time">
-<span id="hours">0</span>
+
+<div class="counter">
+
+<span id="hours">
+0
+</span>
+
+<small>
 Годин
+</small>
+
 </div>
 
 
-<div class="time">
-<span id="minutes">0</span>
+
+<div class="counter">
+
+<span id="minutes">
+0
+</span>
+
+<small>
 Хвилин
+</small>
+
 </div>
 
 
-<div class="time">
-<span id="seconds">0</span>
+
+<div class="counter">
+
+<span id="seconds">
+0
+</span>
+
+<small>
 Секунд
+</small>
+
 </div>
 
 
 </div>
 
+
+
+<br>
 
 
 <a href="#story" class="button">
 
-Відкрити запрошення
+Відкрити
 
 </a>
-
 
 
 </div>
 
 
 </header>
+
 <section id="story" class="section story">
 
 
-<div class="ornament">
-❦
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Наша історія
+<h2 class="section-title">
+
+Наша <span class="gold">історія</span>
+
 </h2>
 
 
-<p>
 
-Наша історія кохання розпочалася
-<br>
+<p class="intro">
+
+Наша історія розпочалася
 16 березня 2025 року.
 
 <br><br>
 
-Два різних світи.
-<br>
-Дві культури.
-<br>
-Одна велика любов.
+Два різних світи,
+дві культури,
+одна любов.
 
 <br><br>
 
-Ми щасливі запросити Вас
-стати частиною нашого особливого дня
-та розділити з нами початок
-нашого сімейного життя.
+Ми віримо, що найкращі моменти життя
+створюються разом з людьми,
+яких ми любимо.
+
+Саме тому будемо щасливі
+розділити цей особливий день
+разом з Вами.
 
 </p>
 
 
 </section>
+
+
 
 
 
@@ -604,72 +701,86 @@ right:20px;
 <section class="section">
 
 
-<div class="ornament">
-❦
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Програма весілля
+<h2 class="section-title">
+
+Деталі <span class="gold">свята</span>
+
 </h2>
 
 
 
-<div class="cards">
+<div class="timeline">
 
 
-<div class="card">
+
+<div class="event">
 
 <h3>
 13:00
 </h3>
 
 <p>
+
 Весільна церемонія
+
 <br>
-<br>
+
 Зустріч гостей
-та початок свята
+та початок нашої історії
+
 </p>
 
 </div>
 
 
 
-<div class="card">
+
+<div class="event">
 
 <h3>
 15:00
 </h3>
 
 <p>
-Святковий обід
+
+Святкова вечеря
+
 <br>
-<br>
-Теплі слова,
-побажання та тости
+
+Вишукані страви,
+теплі слова та тости
+
 </p>
 
 </div>
 
 
 
-<div class="card">
+
+<div class="event">
 
 <h3>
 18:00
 </h3>
 
 <p>
-Танці та розваги
+
+Святкування
+
 <br>
-<br>
-Незабутні моменти
-разом з родиною
-та друзями
+
+Музика,
+танці та незабутні емоції
+
 </p>
 
 </div>
+
 
 
 
@@ -682,28 +793,33 @@ right:20px;
 
 
 
-<section class="section location">
 
 
-<div class="ornament">
-❦
+<section class="section venue">
+
+
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Локація
+<h2 class="section-title">
+
+Місце <span class="gold">зустрічі</span>
+
 </h2>
 
 
-<p>
+
+<p class="intro">
+
 
 HARVEST Restaurant
 
 <br><br>
 
 Козин,
-Київська область,
-Україна
+Київська область
 
 <br><br>
 
@@ -713,9 +829,13 @@ HARVEST Restaurant
 
 
 
+<br>
+
+
 <a class="button"
 href="https://maps.google.com/?q=Harvest+Kozyn+Ukraine"
-target="_blank">
+target="_blank"
+style="color:#333;border-color:#333">
 
 Відкрити карту
 
@@ -729,42 +849,49 @@ target="_blank">
 
 
 
-<section class="section">
 
 
-<div class="ornament">
-❦
+<section class="section dress">
+
+
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Дрес-код
+
+<h2 class="section-title">
+
+Dress <span class="gold">Code</span>
+
 </h2>
 
 
-<p>
+
+<p class="intro">
 
 Ми будемо раді бачити Вас
 у святковому та елегантному образі.
 
 <br><br>
 
+
 Рекомендовані кольори:
 
 <br><br>
 
-🤍 Білий  
-<br>
-🤎 Бежевий  
-<br>
-✨ Золотий  
-<br>
-🌿 Пастельні відтінки
+<span class="gold">
+
+Шампань • Бежевий • Золотий • Пастельні відтінки
+
+</span>
+
 
 </p>
 
 
 </section>
+
 
 
 
@@ -775,54 +902,22 @@ target="_blank">
 <section class="section">
 
 
-<div class="ornament">
-❦
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Побажання гостям
-</h2>
 
+<h2 class="section-title">
 
-<p>
+Наші <span class="gold">моменти</span>
 
-Найцінніший подарунок для нас —
-це Ваша присутність поруч
-у цей особливий день.
-
-<br><br>
-
-Ваші щирі слова,
-підтримка та любов
-залишаться з нами назавжди.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="section gallery">
-
-
-<div class="ornament">
-❦
-</div>
-
-
-<h2>
-Наші моменти
 </h2>
 
 
 
-<div class="photos">
+
+<div class="gallery">
 
 
 <img src="images/photo1.jpg">
@@ -834,8 +929,8 @@ target="_blank">
 <img src="images/photo3.jpg">
 
 
-
 </div>
+
 
 
 </section>
@@ -846,40 +941,53 @@ target="_blank">
 
 
 
-<section class="section">
+<section class="section rsvp">
 
 
-<div class="ornament">
-❦
+<div class="divider">
+✦
 </div>
 
 
-<h2>
-Підтвердження присутності
+<h2 class="section-title">
+
+Підтвердження <span class="gold">присутності</span>
+
 </h2>
+
+
+
+<p class="intro">
+
+Будь ласка, повідомте нам,
+чи зможете Ви розділити цей день разом з нами.
+
+</p>
+
+
+
+<br>
 
 
 
 <form>
 
 
-<input 
+<input
 type="text"
 placeholder="Ваше ім'я">
 
 
 <input
-type="text"
+type="number"
 placeholder="Кількість гостей">
-
 
 
 <select>
 
 <option>
-Буду присутній
+Буду присутній / присутня
 </option>
-
 
 <option>
 Не зможу бути
@@ -889,14 +997,13 @@ placeholder="Кількість гостей">
 </select>
 
 
-
 <textarea
 placeholder="Ваше повідомлення">
 </textarea>
 
 
-
-<button class="button">
+<button class="button"
+style="background:#b89a5a;border:none">
 
 Надіслати
 
@@ -913,16 +1020,154 @@ placeholder="Ваше повідомлення">
 
 
 
+<style>
 
 
-<footer style="background:#222;color:white;padding:50px;text-align:center;">
+.timeline{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
 
 
-<p>
+
+.event{
+
+background:white;
+
+padding:40px;
+
+width:280px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+.event h3{
+
+font-size:55px;
+
+color:#b89a5a;
+
+margin-bottom:20px;
+
+}
+
+
+
+.gallery{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.gallery img{
+
+width:320px;
+
+height:400px;
+
+object-fit:cover;
+
+}
+
+
+
+form{
+
+max-width:500px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+padding:18px;
+
+font-family:'Montserrat';
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+}
+
+
+
+textarea{
+
+height:120px;
+
+}
+
+
+
+.venue{
+
+background:#f2eadb;
+
+}
+
+
+
+</style>
+
+<footer style="
+background:#1f1f1f;
+color:white;
+padding:70px 20px;
+text-align:center;
+">
+
+<div style="
+font-family:'Cormorant Garamond';
+font-size:45px;
+letter-spacing:5px;
+">
+
+H & Y
+
+</div>
+
+
+<br>
+
+
+<p style="
+font-size:20px;
+line-height:2;
+">
 
 З любов'ю ❤️
 
-<br><br>
+<br>
 
 Хавал & Юлія
 
@@ -933,10 +1178,21 @@ placeholder="Ваше повідомлення">
 </p>
 
 
+<br>
+
+
+<p style="
+font-size:13px;
+opacity:.7;
+">
+
+Дякуємо, що будете частиною
+нашого особливого дня
+
+</p>
+
+
 </footer>
-
-
-
 
 
 
@@ -945,15 +1201,17 @@ placeholder="Ваше повідомлення">
 <script>
 
 
-// Таймер до весілля
+// ==========================
+// COUNTDOWN
+// ==========================
 
 
-const wedding =
+const weddingDate =
 new Date("August 28, 2026 13:00:00").getTime();
 
 
 
-setInterval(()=>{
+function updateCountdown(){
 
 
 const now =
@@ -961,55 +1219,140 @@ new Date().getTime();
 
 
 const distance =
-wedding-now;
+weddingDate - now;
+
+
+
+if(distance < 0){
+
+document.getElementById("days").innerHTML="0";
+
+document.getElementById("hours").innerHTML="0";
+
+document.getElementById("minutes").innerHTML="0";
+
+document.getElementById("seconds").innerHTML="0";
+
+return;
+
+}
 
 
 
 const days =
 Math.floor(
-distance/(1000*60*60*24)
+distance /
+(1000 * 60 * 60 * 24)
 );
 
 
 
 const hours =
 Math.floor(
-(distance%(1000*60*60*24))
+(distance %
+(1000 * 60 * 60 * 24))
 /
-(1000*60*60)
+(1000 * 60 * 60)
 );
 
 
 
 const minutes =
 Math.floor(
-(distance%(1000*60*60))
+(distance %
+(1000 * 60 * 60))
 /
-(1000*60)
+(1000 * 60)
 );
 
 
 
 const seconds =
 Math.floor(
-(distance%(1000*60))
+(distance %
+(1000 * 60))
 /
 1000
 );
 
 
 
-document.getElementById("days").innerHTML=days;
-
-document.getElementById("hours").innerHTML=hours;
-
-document.getElementById("minutes").innerHTML=minutes;
-
-document.getElementById("seconds").innerHTML=seconds;
+document.getElementById("days").innerHTML =
+days;
 
 
+document.getElementById("hours").innerHTML =
+hours;
 
-},1000);
+
+document.getElementById("minutes").innerHTML =
+minutes;
+
+
+document.getElementById("seconds").innerHTML =
+seconds;
+
+
+}
+
+
+
+updateCountdown();
+
+
+setInterval(updateCountdown,1000);
+
+
+
+
+
+// ==========================
+// SMOOTH REVEAL ANIMATION
+// ==========================
+
+
+const sections =
+document.querySelectorAll(".section");
+
+
+
+const observer =
+new IntersectionObserver((entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+
+});
+
+
+});
+
+
+
+sections.forEach(section=>{
+
+
+section.style.opacity="0";
+
+section.style.transform="translateY(40px)";
+
+section.style.transition="1s ease";
+
+
+observer.observe(section);
+
+
+});
 
 
 
@@ -1017,6 +1360,12 @@ document.getElementById("seconds").innerHTML=seconds;
 
 
 
+
+
 </body>
 
 </html>
+images/cover.jpg
+images/photo1.jpg
+images/photo2.jpg
+images/photo3.jpg
