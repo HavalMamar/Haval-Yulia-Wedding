@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+28-08-2026
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
